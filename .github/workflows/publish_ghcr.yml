@@ -1,4 +1,3 @@
-# the github token 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
 # to use this token with github workflows go to project setting -- secrets and variables -- new
 # name it GH_TOKEN and add the above token
 name: Docker image CI for GHCR
