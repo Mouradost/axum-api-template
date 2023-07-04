@@ -1,0 +1,20 @@
+# the github token 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
+# to use this token with github workflows go to project setting -- secrets and variables -- new
+# name it GH_TOKEN and add the above token
+name: Docker image CI for GHCR
+
+on:
+  push:
+    branches: ['main']
+
+jobs:
+  build_and_publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build and push the image
+        run: |
+          docker login --username mouradost --password ${{ secrets.GH_TOKEN }} ghcr.io
+          docker build . --tag ghcr.io/mouradost/rust-app:latest
+          docker push ghcr.io/mouradost/rust-app:latest

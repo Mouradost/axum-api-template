@@ -1,0 +1,13 @@
+# Any build artifact
+target
+**/target
+
+# Docker files
+Dockerfile
+.dockerignore
+
+# Git files
+.git
+.gitignore
+**/.git
+**/.gitignore
