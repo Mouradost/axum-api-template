@@ -1,0 +1,12 @@
+version: '4'
+
+services:
+  axum-api-template:
+    container_name: axum-api-template 
+    build: .
+    image: mouradost/axum-api-template
+    ports:
+      - 8080:8080
+    volumes:
+      - ./database:/app/database
+      - ./migrations:/app/migrations
